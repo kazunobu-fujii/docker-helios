@@ -21,6 +21,12 @@ Access the admin page:
 open http://$(boot2docker ip):8080/admin
 ```
 
+Run the image with APNs cert:
+
+```
+docker run -d --name helios -e 'HELIOS_DB_NAME=myapp' -p 8080:8080 --link postgres:postgres -v `pwd`/cert:/usr/src/app/cert helios
+```
+
 ## License
 
 MIT license
